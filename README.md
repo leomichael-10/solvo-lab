@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Solvo Lab — Marketing Website
+
+Production-ready marketing website for **Solvo Lab FZE LLC**, built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
+
+## Tech Stack
+
+| Layer | Choice |
+|-------|--------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript (strict) |
+| Styling | Tailwind CSS v4 (CSS-based config) |
+| Icons | lucide-react |
+| Fonts | Playfair Display + Inter via `next/font/google` |
+| Deploy | Vercel (static export) |
 
 ## Getting Started
 

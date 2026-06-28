@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Design tokens (Tailwind v4 theme) ─────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-bg:     #0D1117;
+  --color-bg2:    #161B22;
+  --color-bg3:    #1C2333;
+  --color-border: #21262D;
+  --color-accent: #2F81F7;
+  --color-text:   #E6EDF3;
+  --color-muted:  #7D8590;
+  --color-subtle: #30363D;
+
+  /* Font families — vars injected by next/font */
+  --font-family-playfair: var(--font-playfair), Georgia, serif;
+  --font-family-inter:    var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0D1117;
+  color: #E6EDF3;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hairline section borders */
+.section-border-top {
+  border-top: 1px solid #21262D;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #2F81F7;
+  outline-offset: 2px;
+}
+
+/* Solutions carousel fade */
+.card-visible {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+.card-hidden {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-visible,
+  .card-hidden {
+    transition: none;
+  }
 }
