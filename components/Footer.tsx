@@ -1,3 +1,7 @@
+"use client";
+
+import { AnimateIn } from "@/components/ui/AnimateIn";
+
 const navLinks = [
   { label: "Solutions", href: "#solutions" },
   { label: "About", href: "#about" },
@@ -10,6 +14,7 @@ export default function Footer() {
   return (
     <footer className="section-border-top bg-bg2" aria-label="Site footer">
       {/* Main footer grid */}
+      <AnimateIn>
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand column */}
         <div>
@@ -74,6 +79,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+      </AnimateIn>
 
       {/* Bottom bar */}
       <div className="border-t border-border">

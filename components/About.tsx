@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { AnimateIn, StaggerIn, StaggerItem } from "@/components/ui/AnimateIn";
+
 const values = [
   {
     number: "01",
@@ -28,8 +33,8 @@ export default function About() {
       className="section-border-top border-b border-border px-6 lg:px-16 py-24 lg:py-32"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        {/* Left column */}
-        <div className="flex flex-col justify-center">
+        {/* Left column — fade up */}
+        <AnimateIn className="flex flex-col justify-center">
           <span className="font-inter text-xs font-medium tracking-widest uppercase text-muted mb-6">
             Who we are
           </span>
@@ -46,27 +51,37 @@ export default function About() {
             corporates — combining deep expertise with a results-first approach
             to help organisations grow, adapt, and thrive.
           </p>
-        </div>
+        </AnimateIn>
 
-        {/* Right column — values list */}
-        <div className="flex flex-col border-t border-border divide-y divide-border">
+        {/* Right column — staggered values list */}
+        <StaggerIn
+          className="flex flex-col border-t border-border divide-y divide-border"
+          staggerDelay={0.12}
+        >
           {values.map((v) => (
-            <div key={v.number} className="py-6 flex gap-6 items-start">
-              <span className="font-inter text-xs font-medium text-subtle pt-1 w-6 shrink-0">
-                {v.number}
-              </span>
-              <div>
-                <p className="font-inter font-semibold text-text text-sm mb-1">
-                  {v.title}
-                </p>
-                <p className="font-inter font-light text-muted text-sm leading-relaxed">
-                  {v.desc}
-                </p>
-              </div>
-            </div>
+            <StaggerItem key={v.number}>
+              <motion.div
+                className="py-6 flex gap-6 items-start group"
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <span className="font-inter text-xs font-medium text-subtle pt-1 w-6 shrink-0 group-hover:text-accent transition-colors duration-200">
+                  {v.number}
+                </span>
+                <div>
+                  <p className="font-inter font-semibold text-text text-sm mb-1">
+                    {v.title}
+                  </p>
+                  <p className="font-inter font-light text-muted text-sm leading-relaxed">
+                    {v.desc}
+                  </p>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerIn>
       </div>
     </section>
   );
 }
+
