@@ -102,7 +102,7 @@ export default function Hero() {
           Explore solutions
         </motion.a>
         <motion.a
-          href="mailto:info@solvo-lab.com"
+          href="#contact"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="inline-flex items-center justify-center px-6 py-3 border border-border text-text font-inter font-medium text-sm rounded-md hover:bg-bg2 transition-colors duration-200"

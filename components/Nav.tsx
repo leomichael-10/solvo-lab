@@ -53,7 +53,7 @@ export default function Nav() {
           <NavLink href="#about">Insights</NavLink>
           <NavLink href="#about">About</NavLink>
           <motion.a
-            href="mailto:info@solvo-lab.com"
+            href="#contact"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="ml-2 px-4 py-2 bg-accent text-white text-sm font-inter font-medium rounded-md"
@@ -102,7 +102,7 @@ export default function Nav() {
               <NavLink href="#about" onClick={() => setMenuOpen(false)}>Insights</NavLink>
               <NavLink href="#about" onClick={() => setMenuOpen(false)}>About</NavLink>
               <a
-                href="mailto:info@solvo-lab.com"
+                href="#contact"
                 className="inline-flex items-center justify-center px-4 py-2 bg-accent text-white text-sm font-inter font-medium rounded-md"
                 onClick={() => setMenuOpen(false)}
               >

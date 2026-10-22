@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
 const navLinks = [
   { label: "Solutions", href: "#solutions" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "mailto:info@solvo-lab.com" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -18,13 +19,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Brand column */}
         <div>
-          <a
+          <Link
             href="/"
             className="font-playfair text-xl font-bold text-text tracking-tight mb-4 inline-block"
             aria-label="Solvo Lab home"
           >
             Solvo<span className="text-accent">.</span>Lab
-          </a>
+          </Link>
           <p className="font-inter font-light text-muted text-sm leading-relaxed max-w-xs mt-3">
             A UAE-licensed management consultancy delivering strategic clarity,
             operational excellence, and 360° business support.
